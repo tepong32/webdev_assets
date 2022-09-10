@@ -1,0 +1,5 @@
+<!-- This script is needed for dynamic fb-comments (separate comments per blog post/article)-->
+<!-- Get head and actual code from https://developers.facebook.com/docs/plugins -->
+<script>
+    $(document).ready( function() { $(".fb-comments").attr("data-href", window.location.href.split('?')[0]); });
+</script>
