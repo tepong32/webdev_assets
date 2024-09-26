@@ -1,0 +1,28 @@
+######## use a JavaScript function to submit the form programmatically:
+
+<li class="nav-item">
+  <a href="#" onclick="document.getElementById('logout-form').submit()">
+    <i class="nav-icon fas fa-th"></i>
+    <p>
+      Logout
+    </p>
+  </a>
+
+  <form id="logout-form" action="{% url 'logout' %}" method="post" style="display: none;">
+    {% csrf_token %}
+  </form>
+</li>
+
+#### OR ####
+
+######## This will send a POST request to the logout view, which will log out the user and redirect them to the login page:
+
+<form action="{% url 'logout' %}" method="post">
+  {% csrf_token %}
+  <button type="submit" class="nav-link">
+    <i class="nav-icon fas fa-th"></i>
+    <p>
+      Logout
+    </p>
+  </button>
+</form>
